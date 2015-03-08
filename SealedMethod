@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpProject
+{
+    class SealedMethod
+    {
+        public virtual void Show()
+        {
+            Console.WriteLine("Sealedmethod show method");
+        }
+    }
+    class class2 : SealedMethod
+    {
+        public sealed override void Show()
+        {
+            Console.WriteLine("class 2 show method");
+        }
+    }
+    class class3 : class2
+    {
+        public override void Show() //invalid statement //
+        {
+           //It can't override the method which is declared as Sealed//
+        }
+       
+    }
+}
