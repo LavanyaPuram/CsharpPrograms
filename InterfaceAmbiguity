@@ -1,0 +1,45 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CSharpProject
+{
+    interface InterfaceAmbiguity1
+    {
+        void Test();
+        void Show();
+    }
+    interface InterfaceAmbiguity2
+    {
+        void Test();
+        void Show();
+    }
+    class InterClass : InterfaceAmbiguity1, InterfaceAmbiguity2
+    {
+        public void Test()
+        {
+            Console.WriteLine("Declared in 2 interfaces");
+        }
+        void InterfaceAmbiguity1.Show()
+        {
+            Console.WriteLine("Declared in first interface");
+        }
+        void InterfaceAmbiguity2.Show()
+        {
+            Console.WriteLine("Declared in second interface");
+        }
+        static void Main()
+        {
+            InterClass c = new InterClass();
+            c.Test();
+            //c.show(); -it is invalid because 2 versions exist//
+            InterfaceAmbiguity1 i1 = c;  //here i1 is a interface reference//
+            InterfaceAmbiguity2 i2 = c;
+            i1.Show();
+            i2.Show();
+            Console.ReadLine();
+        }
+    }
+}
