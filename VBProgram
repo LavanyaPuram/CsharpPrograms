@@ -1,0 +1,15 @@
+Public Class VBClass
+    Public Function SayHello(name As String) As String
+
+        Return "Hello " & name
+    End Function
+    Public Sub AddNums(x As Integer, y As Integer)
+        Console.WriteLine(x + y)
+    End Sub
+    Public Sub Math(a As Integer, b As Integer, ByRef c As Integer, ByRef d As Integer)
+        c = a + b
+        d = a * b
+
+    End Sub
+
+End Class
