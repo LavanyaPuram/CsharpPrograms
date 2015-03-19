@@ -1,0 +1,24 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using VBProject;//it is a project developed in Visual Basic//
+namespace CSharpProject
+{
+    class TestVB
+    {
+        static void Main()
+        {
+            VBClass obj = new VBClass(); //Class1  is a class in VBProject//
+            obj.AddNums(10, 20);        //By creating it's object we can access its methods in our c# project//
+            string str=obj.SayHello("Ram");
+            Console.WriteLine(str);
+            int x = 0, y = 0;
+            obj.Math(100, 200, ref x, ref y);
+            Console.WriteLine(x + " " + y);
+            Console.ReadLine();
+         
+        }
+    }
+}
